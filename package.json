@@ -1,0 +1,35 @@
+{
+  "name": "virtual-keyboard",
+  "version": "1.0.0",
+  "description": "virtual keyboard for Rss-school",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "dev": "webpack --mode development",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/svoboda88/virtual-keyboard.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/svoboda88/virtual-keyboard/issues"
+  },
+  "homepage": "https://github.com/svoboda88/virtual-keyboard#readme",
+  "devDependencies": {
+    "clean-webpack-plugin": "^4.0.0",
+    "css-loader": "^6.7.1",
+    "file": "^0.2.2",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.5.0",
+    "loader": "^2.1.1",
+    "mini-css-extract-plugin": "^2.6.0",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.72.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.9.0"
+  }
+}
