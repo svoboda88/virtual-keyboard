@@ -2,13 +2,13 @@ import arrowTopImage from '../assets/icon-top.png';
 import arrowLeftImage from '../assets/icon-left.png';
 import arrowRightImage from '../assets/icon-right.png';
 import arrowBotImage from '../assets/icon-bottom.png';
+import { onKeyPressHandler } from './listeners';
 
     class markup {
     constructor() {
     this.wrapper;
     this.input;
     this.keyboardWrapper;
-    this.key;
     this.description;
     this.descrParagraphOne;
     this.descrParagraphTwo;
@@ -19,6 +19,7 @@ import arrowBotImage from '../assets/icon-bottom.png';
         document.body.prepend(this.wrapper);
         this.input = document.createElement('textarea');
         this.input.classList.add('input');
+        this.input.id = 'input';
         this.wrapper.prepend(this.input);
         this.keyboardWrapper = document.createElement('div');
         this.keyboardWrapper.classList.add('keyboard-wrapper');
@@ -32,57 +33,64 @@ import arrowBotImage from '../assets/icon-bottom.png';
         this.descrParagraphTwo = document.createElement('p');
         this.descrParagraphTwo.textContent = 'Для переключения языка команда: левые ctrl + alt';
         this.description.append(this.descrParagraphTwo);
+
+
     }
 
     createButtons(arr) {
         for (let i=0; i<arr.length; i++) {
-            this.key = document.createElement('button');
-            this.key.classList.add('key');
-            this.key.textContent = arr[i];
-            this.keyboardWrapper.append(this.key);
-            if (this.key.textContent === 'Backspace' || this.key.textContent === 'Tab' || this.key.textContent === 'CapsLock'
-            || this.key.textContent === 'Shift' || this.key.textContent === 'Ctrl' || this.key.textContent === 'Win' || this.key.textContent === 'Alt'
-            || this.key.textContent === 'Del' || this.key.textContent === 'Enter' || this.key.textContent === ' ' || this.key.textContent === '  '
-            || this.key.textContent === '   ' || this.key.textContent === '    '  || this.key.textContent === 'Shift ') {
-                this.key.classList.add('black');
+            const key = document.createElement('button');
+            key.classList.add('key');
+            key.textContent = arr[i];
+            this.keyboardWrapper.append(key);
+            if (key.textContent === 'Backspace' || key.textContent === 'Tab' || key.textContent === 'CapsLock'
+            || key.textContent === 'Shift' || key.textContent === 'Ctrl' || key.textContent === 'Win' || key.textContent === 'Alt'
+            || key.textContent === 'Del' || key.textContent === 'Enter' || key.textContent === ' ' || key.textContent === '  '
+            || key.textContent === '   ' || key.textContent === '    '  || key.textContent === 'Shift ') {
+                key.classList.add('black');
             }
-            this.key.textContent === 'Backspace' ?  this.key.classList.add('backspace') : this.key;
-            this.key.textContent === 'Tab' ?  this.key.classList.add('tab') : this.key;
-            this.key.textContent === 'CapsLock' ?  this.key.classList.add('capslock') : this.key;
-            this.key.textContent === 'Shift' ?  this.key.classList.add('shift') : this.key;
-            this.key.textContent === 'Shift ' ?  this.key.classList.add('shift_left') : this.key;
-            this.key.textContent === 'Ctrl' ?  this.key.classList.add('ctrl') : this.key;
-            this.key.textContent === 'Win' ?  this.key.classList.add('win') : this.key;
-            this.key.textContent === 'Alt' ?  this.key.classList.add('alt') : this.key;
-            this.key.textContent === 'Del' ?  this.key.classList.add('del') : this.key;
-            this.key.textContent === 'Enter' ?  this.key.classList.add('enter') : this.key;
-            this.key.textContent === ' ' ?  this.key.classList.add('arrowtop') : this.key;
-            this.key.textContent === '  ' ?  this.key.classList.add('arrowleft') : this.key;
-            this.key.textContent === '    ' ?  this.key.classList.add('arrowright') : this.key;
-            this.key.textContent === '   ' ?  this.key.classList.add('arrowbottom') : this.key;
-            this.key.textContent === '     ' ?  this.key.classList.add('space') : this.key;
-            if (this.key.textContent === ' ') {
+        key.textContent === 'Backspace' ?  key.classList.add('backspace') : key;
+            key.textContent === 'Tab' ?  key.classList.add('tab') : key;
+            key.textContent === 'CapsLock' ?  key.classList.add('capslock') : key;
+            key.textContent === 'Shift' ? key.classList.add('shift') : key;
+            key.textContent === 'Shift ' ?  key.classList.add('shift_left') : key;
+            key.textContent === 'Ctrl' ?  key.classList.add('ctrl') : key;
+            key.textContent === 'Win' ?  key.classList.add('win') : key;
+            key.textContent === 'Alt' ?  key.classList.add('alt') : key;
+            key.textContent === 'Del' ?  key.classList.add('del') : key;
+            key.textContent === 'Enter' ? key.classList.add('enter') : key;
+            key.textContent === ' ' ?  key.classList.add('arrowtop') : key;
+            key.textContent === '  ' ?  key.classList.add('arrowleft') : key;
+            key.textContent === '    ' ?  key.classList.add('arrowright') : key;
+            key.textContent === '   ' ?  key.classList.add('arrowbottom') : key;
+            key.textContent === '     ' ?  key.classList.add('space') : key;
+            if (key.textContent === ' ') {
                 const arrowTopImg = document.createElement('img');
                 arrowTopImg.src = arrowTopImage;
-                this.key.append(arrowTopImg);
+                key.append(arrowTopImg);
             }
-            if (this.key.textContent === '  ') {
+            if (key.textContent === '  ') {
                 const arrowLeftImg = document.createElement('img');
                 arrowLeftImg.src = arrowLeftImage;
-                this.key.append(arrowLeftImg);
+                key.append(arrowLeftImg);
             }
-            if (this.key.textContent === '   ') {
+            if (key.textContent === '   ') {
                 const arrowBottomImg = document.createElement('img');
                 arrowBottomImg.src = arrowBotImage;
-                this.key.append(arrowBottomImg);
+                key.append(arrowBottomImg);
             }
-            if (this.key.textContent === '    ') {
+            if (key.textContent === '    ') {
                 const arrowRightImg = document.createElement('img');
                 arrowRightImg.src = arrowRightImage;
-                this.key.append(arrowRightImg);
+                key.append(arrowRightImg);
             }
+            key.id = `key-${key.textContent}`;
+            key.addEventListener('click', () => {
+                this.input.value = this.input.value + key.textContent
+            })
 
         }
+
         return this.keyboardWrapper;
     }
 
