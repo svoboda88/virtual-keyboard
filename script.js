@@ -80,4 +80,4 @@ document.addEventListener('keydown', e => {
 });
     
 
-// npx webpack serve --hot - запустить лайв сервер
+

@@ -1,3 +1,5 @@
+
+
     class Markup {
     constructor() {
     this.wrapper;
@@ -123,6 +125,14 @@
                         return;
                     }
                 }
+            })
+
+            key.addEventListener('mousedown', () => {
+                key.classList.add('active');
+
+            })
+            key.addEventListener('mouseup', () => {
+                key.classList.remove('active');
             })
         }
 
