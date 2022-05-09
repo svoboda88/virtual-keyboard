@@ -1,93 +1,51 @@
-export const engKeys = ['`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', 'Backspace', 
-'Tab', 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', '[', ']', '\\', 'Del', 
-'CapsLock', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', ';', `'`, 'Enter',
-'Shift', 'z', 'x', 'c', 'v', 'b', 'n', 'm', ',', '.', '/', ' ', 'Shift ', 
-'Ctrl', 'Win', 'Alt', '     ', 'Alt', '  ', '   ', '    ', 'Ctrl'];
+export const engKeys = [{text:'`', code: 'Backquote' }, {text:'1', code: 'Digit1' }, {text:'2', code: 'Digit2' }, {text:'3', code: 'Digit3' }, {text:'4', code: 'Digit4' }, {text:'5', code: 'Digit5' }, {text:'6', code: 'Digit6' }, {text:'7', code: 'Digit7' }, {text:'8', code: 'Digit8' }, {text:'9', code: 'Digit9' }, {text:'0', code: 'Digit0' }, {text:'-', code: 'Minus' }, {text:'=', code: 'Equal' }, {text:'Backspace', code: 'Backspace' }, 
+{text:'Tab', code: 'Tab'}, {text:'q', code: 'KeyQ'}, {text:'w', code: 'KeyW'}, {text:'e', code: 'KeyE'}, {text:'r', code: 'KeyR'}, {text:'t', code: 'KeyT'}, {text:'y', code: 'KeyY'}, {text:'u', code: 'KeyU'}, {text:'i', code: 'KeyI'}, {text:'o', code: 'KeyO'}, {text:'p', code: 'KeyP'}, {text:'[', code: 'BracketLeft'}, {text:']', code: 'BracketRight'}, {text:'\\', code: 'Backslash'}, {text:'Del', code: 'Delete'}, 
+{text:'CapsLock', code: 'CapsLock'}, {text:'a', code: 'KeyA'}, {text:'s', code: 'KeyS'}, {text:'d', code: 'KeyD'}, {text:'f', code: 'KeyF'}, {text:'g', code: 'KeyG'}, {text:'h', code: 'KeyH'}, {text:'j', code: 'KeyJ'}, {text:'k', code: 'KeyK'}, {text:'l', code: 'KeyL'}, {text:';', code: 'Semicolon'}, {text:`'`, code: 'Quote'}, {text:'Enter', code: 'Enter'},
+{text:'Shift', code: 'ShiftLeft'}, {text:'z', code: 'KeyZ'}, {text:'x', code: 'KeyX'}, {text:'c', code: 'KeyC'}, {text:'v', code: 'KeyV'}, {text:'b', code: 'KeyB'}, {text:'n', code: 'KeyN'}, {text:'m', code: 'KeyM'}, {text:',', code: 'Comma'}, {text:'.', code: 'NumpadDecimal'}, {text:'/', code: 'NumpadDivide'}, {text:'˄', code: 'ArrowUp'}, {text:'Shift', code: 'ShiftRight'}, 
+{text:'Ctrl', code: 'ControlLeft'}, {text:'Win', code: 'MetaLeft'}, {text:'Alt', code: 'AltLeft'}, {text:' ', code: 'Space'}, {text:'Alt', code: 'AltRight'}, {text:'˂', code: 'ArrowLeft'}, {text:'˅', code: 'ArrowDown'}, {text:'˃', code: 'ArrowRight'}, {text:'Ctrl', code: 'ControlRight'}];
+
+export const engKeysCapsLock = [{text:'`', code: 'Backquote' }, {text:'1', code: 'Digit1' }, {text:'2', code: 'Digit2' }, {text:'3', code: 'Digit3' }, {text:'4', code: 'Digit4' }, {text:'5', code: 'Digit5' }, {text:'6', code: 'Digit6' }, {text:'7', code: 'Digit7' }, {text:'8', code: 'Digit8' }, {text:'9', code: 'Digit9' }, {text:'0', code: 'Digit0' }, {text:'-', code: 'Minus' }, {text:'=', code: 'Equal' }, {text:'Backspace', code: 'Backspace' }, 
+{text:'Tab', code: 'Tab'}, {text:'Q', code: 'KeyQ'}, {text:'W', code: 'KeyW'}, {text:'E', code: 'KeyE'}, {text:'R', code: 'KeyR'}, {text:'T', code: 'KeyT'}, {text:'Y', code: 'KeyY'}, {text:'U', code: 'KeyU'}, {text:'I', code: 'KeyI'}, {text:'O', code: 'KeyO'}, {text:'P', code: 'KeyP'}, {text:'[', code: 'BracketLeft'}, {text:']', code: 'BracketRight'}, {text:'\\', code: 'Backslash'}, {text:'Del', code: 'Delete'}, 
+{text:'CapsLock', code: 'CapsLock'}, {text:'A', code: 'KeyA'}, {text:'S', code: 'KeyS'}, {text:'D', code: 'KeyD'}, {text:'F', code: 'KeyF'}, {text:'G', code: 'KeyG'}, {text:'H', code: 'KeyH'}, {text:'J', code: 'KeyJ'}, {text:'K', code: 'KeyK'}, {text:'L', code: 'KeyL'}, {text:';', code: 'Semicolon'}, {text:`'`, code: 'Quote'}, {text:'Enter', code: 'Enter'},
+{text:'Shift', code: 'ShiftLeft'}, {text:'Z', code: 'KeyZ'}, {text:'X', code: 'KeyX'}, {text:'C', code: 'KeyC'}, {text:'V', code: 'KeyV'}, {text:'B', code: 'KeyB'}, {text:'N', code: 'KeyN'}, {text:'M', code: 'KeyM'}, {text:',', code: 'Comma'}, {text:'.', code: 'NumpadDecimal'}, {text:'/', code: 'NumpadDivide'}, {text:'˄', code: 'ArrowUp'}, {text:'Shift', code: 'ShiftRight'}, 
+{text:'Ctrl', code: 'ControlLeft'}, {text:'Win', code: 'MetaLeft'}, {text:'Alt', code: 'AltLeft'}, {text:' ', code: 'Space'}, {text:'Alt', code: 'AltRight'}, {text:'˂', code: 'ArrowLeft'}, {text:'˅', code: 'ArrowDown'}, {text:'˃', code: 'ArrowRight'}, {text:'Ctrl', code: 'ControlRight'}];
+
+export const engKeysShift = [{text:'~', code: 'Backquote'}, {text:'!', code: 'Digit1' }, {text:'@', code: 'Digit2' }, {text:'#', code: 'Digit3' }, {text:'$', code: 'Digit4' }, {text:'%', code: 'Digit5' }, {text:'^', code: 'Digit6' }, {text:'&', code: 'Digit7' }, {text:'*', code: 'Digit8' }, {text:'(', code: 'Digit9' }, {text:')', code: 'Digit0' }, {text:'_', code: 'Minus' }, {text:'+', code: 'Equal' }, {text:'Backspace', code: 'Backspace' }, 
+{text:'Tab', code: 'Tab'}, {text:'Q', code: 'KeyQ'}, {text:'W', code: 'KeyW'}, {text:'E', code: 'KeyE'}, {text:'R', code: 'KeyR'}, {text:'T', code: 'KeyT'}, {text:'Y', code: 'KeyY'}, {text:'U', code: 'KeyU'}, {text:'I', code: 'KeyI'}, {text:'O', code: 'KeyO'}, {text:'P', code: 'KeyP'}, {text:'{', code: 'BracketLeft'}, {text:'}', code: 'BracketRight'}, {text:'|', code: 'Backslash'}, {text:'Del', code: 'Delete'}, 
+{text:'CapsLock', code: 'CapsLock'}, {text:'A', code: 'KeyA'}, {text:'S', code: 'KeyS'}, {text:'D', code: 'KeyD'}, {text:'F', code: 'KeyF'}, {text:'G', code: 'KeyG'}, {text:'H', code: 'KeyH'}, {text:'J', code: 'KeyJ'}, {text:'K', code: 'KeyK'}, {text:'L', code: 'KeyL'}, {text:':', code: 'Semicolon'}, {text:`"`, code: 'Quote'}, {text:'Enter', code: 'Enter'},
+{text:'Shift', code: 'ShiftLeft'}, {text:'Z', code: 'KeyZ'}, {text:'X', code: 'KeyX'}, {text:'C', code: 'KeyC'}, {text:'V', code: 'KeyV'}, {text:'B', code: 'KeyB'}, {text:'N', code: 'KeyN'}, {text:'M', code: 'KeyM'}, {text:'<', code: 'Comma'}, {text:'>', code: 'NumpadDecimal'}, {text:'?', code: 'NumpadDivide'}, {text:'˄', code: 'ArrowUp'}, {text:'Shift', code: 'ShiftRight'}, 
+{text:'Ctrl', code: 'ControlLeft'}, {text:'Win', code: 'MetaLeft'}, {text:'Alt', code: 'AltLeft'}, {text:' ', code: 'Space'}, {text:'Alt', code: 'AltRight'}, {text:'˂', code: 'ArrowLeft'}, {text:'˅', code: 'ArrowDown'}, {text:'˃', code: 'ArrowRight'}, {text:'Ctrl', code: 'ControlRight'}];
+
+export const engShiftCapsLock = [{text:'~', code: 'Backquote'}, {text:'!', code: 'Digit1' }, {text:'@', code: 'Digit2' }, {text:'#', code: 'Digit3' }, {text:'$', code: 'Digit4' }, {text:'%', code: 'Digit5' }, {text:'^', code: 'Digit6' }, {text:'&', code: 'Digit7' }, {text:'*', code: 'Digit8' }, {text:'(', code: 'Digit9' }, {text:')', code: 'Digit0' }, {text:'_', code: 'Minus' }, {text:'+', code: 'Equal' }, {text:'Backspace', code: 'Backspace' }, 
+{text:'Tab', code: 'Tab'}, {text:'q', code: 'KeyQ'}, {text:'w', code: 'KeyW'}, {text:'e', code: 'KeyE'}, {text:'r', code: 'KeyR'}, {text:'t', code: 'KeyT'}, {text:'y', code: 'KeyY'}, {text:'o', code: 'KeyU'}, {text:'i', code: 'KeyI'}, {text:'o', code: 'KeyO'}, {text:'p', code: 'KeyP'}, {text:'{', code: 'BracketLeft'}, {text:'}', code: 'BracketRight'}, {text:'|', code: 'Backslash'}, {text:'Del', code: 'Delete'}, 
+{text:'CapsLock', code: 'CapsLock'}, {text:'a', code: 'KeyA'}, {text:'s', code: 'KeyS'}, {text:'d', code: 'KeyD'}, {text:'f', code: 'KeyF'}, {text:'g', code: 'KeyG'}, {text:'h', code: 'KeyH'}, {text:'j', code: 'KeyJ'}, {text:'k', code: 'KeyK'}, {text:'l', code: 'KeyL'}, {text:':', code: 'Semicolon'}, {text:`"`, code: 'Quote'}, {text:'Enter', code: 'Enter'},
+{text:'Shift', code: 'ShiftLeft'}, {text:'z', code: 'KeyZ'}, {text:'x', code: 'KeyX'}, {text:'c', code: 'KeyC'}, {text:'v', code: 'KeyV'}, {text:'b', code: 'KeyB'}, {text:'n', code: 'KeyN'}, {text:'m', code: 'KeyM'}, {text:'<', code: 'Comma'}, {text:'>', code: 'NumpadDecimal'}, {text:'?', code: 'NumpadDivide'}, {text:'˄', code: 'ArrowUp'}, {text:'Shift', code: 'ShiftRight'}, 
+{text:'Ctrl', code: 'ControlLeft'}, {text:'Win', code: 'MetaLeft'}, {text:'Alt', code: 'AltLeft'}, {text:' ', code: 'Space'}, {text:'Alt', code: 'AltRight'}, {text:'˂', code: 'ArrowLeft'}, {text:'˅', code: 'ArrowDown'}, {text:'˃', code: 'ArrowRight'}, {text:'Ctrl', code: 'ControlRight'}];
 
 
-export const engKeysCapsLock = ['`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', 'Backspace', 
-'Tab', 'Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', '[', ']', '\\', 'Del', 
-'CapsLock', 'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', ';', `'`, 'Enter',
-'Shift', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', ',', '.', '/', ' ', 'Shift ', 
-'Ctrl', 'Win', 'Alt', '     ', 'Alt', '  ', '   ', '    ', 'Ctrl']
-
-export const engKeysShift = ['~', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '+', 'Backspace', 
-'Tab', 'Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', '{', '}', '|', 'Del', 
-'CapsLock', 'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', ':', `"`, 'Enter',
-'Shift', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', '<', '>', '?', ' ', 'Shift ', 
-'Ctrl', 'Win', 'Alt', '     ', 'Alt', '  ', '   ', '    ', 'Ctrl']
+// --------------------------------------------------------
 
 
-// ---------------------------------------------------------------------------------------------------
+export const rusKeys = [{text:'ё', code: 'Backquote' }, {text:'1', code: 'Digit1' }, {text:'2', code: 'Digit2' }, {text:'3', code: 'Digit3' }, {text:'4', code: 'Digit4' }, {text:'5', code: 'Digit5' }, {text:'6', code: 'Digit6' }, {text:'7', code: 'Digit7' }, {text:'8', code: 'Digit8' }, {text:'9', code: 'Digit9' }, {text:'0', code: 'Digit0' }, {text:'-', code: 'Minus' }, {text:'=', code: 'Equal' }, {text:'Backspace', code: 'Backspace' }, 
+{text:'Tab', code: 'Tab'}, {text:'й', code: 'KeyQ'}, {text:'ц', code: 'KeyW'}, {text:'у', code: 'KeyE'}, {text:'к', code: 'KeyR'}, {text:'е', code: 'KeyT'}, {text:'н', code: 'KeyY'}, {text:'г', code: 'KeyU'}, {text:'ш', code: 'KeyI'}, {text:'щ', code: 'KeyO'}, {text:'з', code: 'KeyP'}, {text:'х', code: 'BracketLeft'}, {text:'ъ', code: 'BracketRight'}, {text:'\\', code: 'Backslash'}, {text:'Del', code: 'Delete'}, 
+{text:'CapsLock', code: 'CapsLock'}, {text:'ф', code: 'KeyA'}, {text:'ы', code: 'KeyS'}, {text:'в', code: 'KeyD'}, {text:'а', code: 'KeyF'}, {text:'п', code: 'KeyG'}, {text:'р', code: 'KeyH'}, {text:'о', code: 'KeyJ'}, {text:'л', code: 'KeyK'}, {text:'д', code: 'KeyL'}, {text:'ж', code: 'Semicolon'}, {text:`э`, code: 'Quote'}, {text:'Enter', code: 'Enter'},
+{text:'Shift', code: 'ShiftLeft'}, {text:'я', code: 'KeyZ'}, {text:'ч', code: 'KeyX'}, {text:'с', code: 'KeyC'}, {text:'м', code: 'KeyV'}, {text:'и', code: 'KeyB'}, {text:'т', code: 'KeyN'}, {text:'ь', code: 'KeyM'}, {text:'б', code: 'Comma'}, {text:'ю', code: 'NumpadDecimal'}, {text:'.', code: 'NumpadDivide'}, {text:'˄', code: 'ArrowUp'}, {text:'Shift', code: 'ShiftRight'}, 
+{text:'Ctrl', code: 'ControlLeft'}, {text:'Win', code: 'MetaLeft'}, {text:'Alt', code: 'AltLeft'}, {text:' ', code: 'Space'}, {text:'Alt', code: 'AltRight'}, {text:'˂', code: 'ArrowLeft'}, {text:'˅', code: 'ArrowDown'}, {text:'˃', code: 'ArrowRight'}, {text:'Ctrl', code: 'ControlRight'}];
 
-export const rusKeys = ['ё', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', 'Backspace', 
-'Tab', 'й', 'ц', 'у', 'к', 'е', 'н', 'г', 'ш', 'щ', 'з', 'х', 'ъ', '\\', 'Del', 
-'CapsLock', 'ф', 'ы', 'в', 'а', 'п', 'р', 'о', 'л', 'д', 'ж', `э`, 'Enter',
-'Shift', 'я', 'ч', 'с', 'м', 'и', 'т', 'ь', 'б', 'ю', '.', ' ', 'Shift ', 
-'Ctrl', 'Win', 'Alt', '     ', 'Alt', '  ', '   ', '    ', 'Ctrl'];
+export const rusKeysCapsLock = [{text:'Ё', code: 'Backquote' }, {text:'1', code: 'Digit1' }, {text:'2', code: 'Digit2' }, {text:'3', code: 'Digit3' }, {text:'4', code: 'Digit4' }, {text:'5', code: 'Digit5' }, {text:'6', code: 'Digit6' }, {text:'7', code: 'Digit7' }, {text:'8', code: 'Digit8' }, {text:'9', code: 'Digit9' }, {text:'0', code: 'Digit0' }, {text:'-', code: 'Minus' }, {text:'=', code: 'Equal' }, {text:'Backspace', code: 'Backspace' }, 
+{text:'Tab', code: 'Tab'}, {text:'Й', code: 'KeyQ'}, {text:'Ц', code: 'KeyW'}, {text:'У', code: 'KeyE'}, {text:'К', code: 'KeyR'}, {text:'Е', code: 'KeyT'}, {text:'Н', code: 'KeyY'}, {text:'Г', code: 'KeyU'}, {text:'Ш', code: 'KeyI'}, {text:'Щ', code: 'KeyO'}, {text:'З', code: 'KeyP'}, {text:'Х', code: 'BracketLeft'}, {text:'Ъ', code: 'BracketRight'}, {text:'\\', code: 'Backslash'}, {text:'Del', code: 'Delete'}, 
+{text:'CapsLock', code: 'CapsLock'}, {text:'Ф', code: 'KeyA'}, {text:'Ы', code: 'KeyS'}, {text:'В', code: 'KeyD'}, {text:'А', code: 'KeyF'}, {text:'П', code: 'KeyG'}, {text:'Р', code: 'KeyH'}, {text:'О', code: 'KeyJ'}, {text:'Л', code: 'KeyK'}, {text:'Д', code: 'KeyL'}, {text:'Ж', code: 'Semicolon'}, {text:`Э`, code: 'Quote'}, {text:'Enter', code: 'Enter'},
+{text:'Shift', code: 'ShiftLeft'}, {text:'Я', code: 'KeyZ'}, {text:'Ч', code: 'KeyX'}, {text:'С', code: 'KeyC'}, {text:'М', code: 'KeyV'}, {text:'И', code: 'KeyB'}, {text:'Т', code: 'KeyN'}, {text:'Ь', code: 'KeyM'}, {text:'Б', code: 'Comma'}, {text:'Ю', code: 'NumpadDecimal'}, {text:'.', code: 'NumpadDivide'}, {text:'˄', code: 'ArrowUp'}, {text:'Shift', code: 'ShiftRight'}, 
+{text:'Ctrl', code: 'ControlLeft'}, {text:'Win', code: 'MetaLeft'}, {text:'Alt', code: 'AltLeft'}, {text:' ', code: 'Space'}, {text:'Alt', code: 'AltRight'}, {text:'˂', code: 'ArrowLeft'}, {text:'˅', code: 'ArrowDown'}, {text:'˃', code: 'ArrowRight'}, {text:'Ctrl', code: 'ControlRight'}];
 
-export const rusKeysCapsLock = ['Ё', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', 'Backspace', 
-'Tab', 'Й', 'Ц', 'У', 'К', 'Е', 'Н', 'Г', 'Ш', 'Щ', 'З', 'Х', 'Ъ', '\\', 'Del', 
-'CapsLock', 'Ф', 'Ы', 'В', 'А', 'П', 'Р', 'О', 'Л', 'Д', 'Ж', `Э`, 'Enter',
-'Shift', 'Я', 'Ч', 'С', 'М', 'И', 'Т', 'Ь', 'Б', 'Ю', '.', ' ', 'Shift ', 
-'Ctrl', 'Win', 'Alt', '     ', 'Alt', '  ', '   ', '    ', 'Ctrl'];
+export const rusKeysShift = [{text:'Ё', code: 'Backquote' }, {text:'!', code: 'Digit1' }, {text:'"', code: 'Digit2' }, {text:'№', code: 'Digit3' }, {text:';', code: 'Digit4' }, {text:'%', code: 'Digit5' }, {text:':', code: 'Digit6' }, {text:'?', code: 'Digit7' }, {text:'*', code: 'Digit8' }, {text:'(', code: 'Digit9' }, {text:')', code: 'Digit0' }, {text:'_', code: 'Minus' }, {text:'+', code: 'Equal' }, {text:'Backspace', code: 'Backspace' }, 
+{text:'Tab', code: 'Tab'}, {text:'Й', code: 'KeyQ'}, {text:'Ц', code: 'KeyW'}, {text:'У', code: 'KeyE'}, {text:'К', code: 'KeyR'}, {text:'Е', code: 'KeyT'}, {text:'Н', code: 'KeyY'}, {text:'Г', code: 'KeyU'}, {text:'Ш', code: 'KeyI'}, {text:'Щ', code: 'KeyO'}, {text:'З', code: 'KeyP'}, {text:'Х', code: 'BracketLeft'}, {text:'Ъ', code: 'BracketRight'}, {text:'/', code: 'Backslash'}, {text:'Del', code: 'Delete'}, 
+{text:'CapsLock', code: 'CapsLock'}, {text:'Ф', code: 'KeyA'}, {text:'Ы', code: 'KeyS'}, {text:'В', code: 'KeyD'}, {text:'А', code: 'KeyF'}, {text:'П', code: 'KeyG'}, {text:'Р', code: 'KeyH'}, {text:'О', code: 'KeyJ'}, {text:'Л', code: 'KeyK'}, {text:'Д', code: 'KeyL'}, {text:'Ж', code: 'Semicolon'}, {text:`Э`, code: 'Quote'}, {text:'Enter', code: 'Enter'},
+{text:'Shift', code: 'ShiftLeft'}, {text:'Я', code: 'KeyZ'}, {text:'Ч', code: 'KeyX'}, {text:'С', code: 'KeyC'}, {text:'М', code: 'KeyV'}, {text:'И', code: 'KeyB'}, {text:'Т', code: 'KeyN'}, {text:'Ь', code: 'KeyM'}, {text:'Б', code: 'Comma'}, {text:'Ю', code: 'NumpadDecimal'}, {text:',', code: 'NumpadDivide'}, {text:'˄', code: 'ArrowUp'}, {text:'Shift', code: 'ShiftRight'}, 
+{text:'Ctrl', code: 'ControlLeft'}, {text:'Win', code: 'MetaLeft'}, {text:'Alt', code: 'AltLeft'}, {text:' ', code: 'Space'}, {text:'Alt', code: 'AltRight'}, {text:'˂', code: 'ArrowLeft'}, {text:'˅', code: 'ArrowDown'}, {text:'˃', code: 'ArrowRight'}, {text:'Ctrl', code: 'ControlRight'}];
 
-export const rusKeysShift = ['Ё', '!', '"', '№', ';', '%', ':', '?', '*', '(', ')', '_', '+', 'Backspace', 
-'Tab', 'Й', 'Ц', 'У', 'К', 'Е', 'Н', 'Г', 'Ш', 'Щ', 'З', 'Х', 'Ъ', '/', 'Del', 
-'CapsLock', 'Ф', 'Ы', 'В', 'А', 'П', 'Р', 'О', 'Л', 'Д', 'Ж', `Э`, 'Enter',
-'Shift', 'Я', 'Ч', 'С', 'М', 'И', 'Т', 'Ь', 'Б', 'Ю', ',', ' ', 'Shift ', 
-'Ctrl', 'Win', 'Alt', '     ', 'Alt', '  ', '   ', '    ', 'Ctrl'];
-
-
-export const engShiftCapsLock = ['~', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '+', 'Backspace', 
-'Tab', 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', '{', '}', '|', 'Del', 
-'CapsLock', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', ':', `"`, 'Enter',
-'Shift', 'z', 'x', 'c', 'v', 'b', 'n', 'm', '<', '>', '?', ' ', 'Shift ', 
-'Ctrl', 'Win', 'Alt', '     ', 'Alt', '  ', '   ', '    ', 'Ctrl']
-
-export const rusShiftCapsLock = ['ё', '!', '"', '№', ';', '%', ':', '?', '*', '(', ')', '_', '+', 'Backspace', 
-'Tab', 'й', 'ц', 'у', 'к', 'е', 'н', 'г', 'ш', 'щ', 'з', 'х', 'ъ', '/', 'Del', 
-'CapsLock', 'ф', 'ы', 'в', 'а', 'п', 'р', 'о', 'л', 'д', 'ж', `э`, 'Enter',
-'Shift', 'я', 'ч', 'с', 'м', 'и', 'т', 'ь', 'б', 'ю', ',', ' ', 'Shift ', 
-'Ctrl', 'Win', 'Alt', '     ', 'Alt', '  ', '   ', '    ', 'Ctrl'];
-
-
-export function shiftCapsLockFunc (arr1, arr2) {
-    for (let i=0; i<arr1.length; i++) {
-            if (arr1[i] !== arr2[i]) {
-             arr1[i] = arr2[i]
-            }        
-        }
-        return arr1;
-}
-
-
-/*     function EngCapsLockFunc(arr) {
-    const arrEngCapsLock = arr.map(el => {
-        return el.length === 1 ? el.toUpperCase() : el;
-    })
-    return arrEngCapsLock
-}
-    function EngShiftFunc(arr) {
-        const arrEngShift = arr.map(el => {
-            if (el = '`') return el = '~';
-            if (el = '1') return el = '!';
-            if (el = '2') return el = '@';
-            if (el = '3') return el = '#';
-            if (el = '4') return el = '$';
-            if (el = '5') return el = '%';
-            if (el = '6') return el = '^';
-            if (el = '7') return el = '&';
-            if (el = '8') return el = '*';
-            if (el = '9') return el = '(';
-            if (el = '0') return el = ')';
-            if (el = '-') return el = '_';
-            if (el = '=') return el = '+';
-            if (el = '[') return el = '{';
-            if (el = ']') return el = '}';
-            if (el = '\\') return el = '|';
-            if (el = ';') return el = ':';
-            if (el = '"') return el = `'`;
-            if (el = ';') return el = ':';
-        })
-    } */
+export const rusShiftCapsLock = [{text:'ё', code: 'Backquote' }, {text:'!', code: 'Digit1' }, {text:'"', code: 'Digit2' }, {text:'№', code: 'Digit3' }, {text:';', code: 'Digit4' }, {text:'%', code: 'Digit5' }, {text:':', code: 'Digit6' }, {text:'?', code: 'Digit7' }, {text:'*', code: 'Digit8' }, {text:'(', code: 'Digit9' }, {text:')', code: 'Digit0' }, {text:'_', code: 'Minus' }, {text:'+', code: 'Equal' }, {text:'Backspace', code: 'Backspace' }, 
+{text:'Tab', code: 'Tab'}, {text:'й', code: 'KeyQ'}, {text:'ц', code: 'KeyW'}, {text:'у', code: 'KeyE'}, {text:'к', code: 'KeyR'}, {text:'е', code: 'KeyT'}, {text:'н', code: 'KeyY'}, {text:'г', code: 'KeyU'}, {text:'ш', code: 'KeyI'}, {text:'щ', code: 'KeyO'}, {text:'з', code: 'KeyP'}, {text:'х', code: 'BracketLeft'}, {text:'ъ', code: 'BracketRight'}, {text:'/', code: 'Backslash'}, {text:'Del', code: 'Delete'}, 
+{text:'CapsLock', code: 'CapsLock'}, {text:'ф', code: 'KeyA'}, {text:'ы', code: 'KeyS'}, {text:'в', code: 'KeyD'}, {text:'а', code: 'KeyF'}, {text:'п', code: 'KeyG'}, {text:'р', code: 'KeyH'}, {text:'о', code: 'KeyJ'}, {text:'л', code: 'KeyK'}, {text:'д', code: 'KeyL'}, {text:'ж', code: 'Semicolon'}, {text:`э`, code: 'Quote'}, {text:'Enter', code: 'Enter'},
+{text:'Shift', code: 'ShiftLeft'}, {text:'я', code: 'KeyZ'}, {text:'ч', code: 'KeyX'}, {text:'с', code: 'KeyC'}, {text:'м', code: 'KeyV'}, {text:'и', code: 'KeyB'}, {text:'т', code: 'KeyN'}, {text:'ь', code: 'KeyM'}, {text:'б', code: 'Comma'}, {text:'ю', code: 'NumpadDecimal'}, {text:',', code: 'NumpadDivide'}, {text:'˄', code: 'ArrowUp'}, {text:'Shift', code: 'ShiftRight'}, 
+{text:'Ctrl', code: 'ControlLeft'}, {text:'Win', code: 'MetaLeft'}, {text:'Alt', code: 'AltLeft'}, {text:' ', code: 'Space'}, {text:'Alt', code: 'AltRight'}, {text:'˂', code: 'ArrowLeft'}, {text:'˅', code: 'ArrowDown'}, {text:'˃', code: 'ArrowRight'}, {text:'Ctrl', code: 'ControlRight'}];

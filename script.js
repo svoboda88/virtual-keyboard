@@ -1,16 +1,10 @@
 import './style.css';
-import {markup} from './js-modules/markup';
-import {engKeys} from './js-modules/keys';
-import {rusKeys} from './js-modules/keys';
-import {engKeysShift} from './js-modules/keys';
-import {rusKeysShift} from './js-modules/keys';
-import {engKeysCapsLock} from './js-modules/keys';
-import {rusKeysCapsLock} from './js-modules/keys';
-import {engShiftCapsLock} from './js-modules/keys';
-import {rusShiftCapsLock} from './js-modules/keys';
-import { onKeyPressHandler } from './js-modules/listeners';
+import { engKeys, engKeysCapsLock, rusKeys, rusKeysCapsLock, rusShiftCapsLock, rusKeysShift, engKeysShift, engShiftCapsLock } from './js-modules/keys';
 
-const keyboardMarkup = new markup();
+import { onKeyPressHandler, onKeyUpHandler } from './js-modules/listeners';
+import { Markup } from './js-modules/markup';
+
+const keyboardMarkup = new Markup();
 keyboardMarkup.createDocument(); 
 const isEngKeys = window.localStorage.getItem('isEng') === null ? true : window.localStorage.getItem('isEng') === 'true';
 
@@ -21,21 +15,22 @@ let keyboard = document.querySelector('.keyboard-wrapper')
 let isCapsLockPressed = false;
 
 setTimeout(()=> {
-    window.addEventListener('keypress', (event) =>  onKeyPressHandler( event, input))
+    window.addEventListener('keydown',(event) => onKeyPressHandler(event, input));
+    window.addEventListener('keyup', (event) => onKeyUpHandler(event));
 
 }, 0)
 
 document.addEventListener('keydown', e => {
-    const isEng = window.localStorage.getItem('isEng') === 'true';
+    const isEng = window.localStorage.getItem('isEng') === null ? true : window.localStorage.getItem('isEng') === 'true';
 
     if(e.ctrlKey && e.altKey){
         keyboard.innerHTML = '';
 
         if (isEng) {
-            wrapper.insertBefore(keyboardMarkup.createButtons(rusKeys), input.nextSibling);
+            wrapper.insertBefore(keyboardMarkup.createButtons(isCapsLockPressed ? rusKeysCapsLock :  rusKeys), input.nextSibling);
             window.localStorage.setItem('isEng', false);
         } else {
-            wrapper.insertBefore(keyboardMarkup.createButtons(engKeys), input.nextSibling);
+            wrapper.insertBefore(keyboardMarkup.createButtons(isCapsLockPressed ? engKeysCapsLock  : engKeys ), input.nextSibling);
             window.localStorage.setItem('isEng', true);
         }
     } 
@@ -43,13 +38,13 @@ document.addEventListener('keydown', e => {
 });
 
 document.addEventListener('keydown', e => {
-    const isEng = window.localStorage.getItem('isEng') === 'true';
+    const isEng = window.localStorage.getItem('isEng') === null ? true : window.localStorage.getItem('isEng') === 'true';
 
     if(e.shiftKey){
         keyboard.innerHTML = '';
 
         if (isEng) {
-            wrapper.insertBefore(keyboardMarkup.createButtons(isCapsLockPressed ? engShiftCapsLock: engKeysShift ), input.nextSibling);
+            wrapper.insertBefore(keyboardMarkup.createButtons(isCapsLockPressed ? engShiftCapsLock : engKeysShift ), input.nextSibling);
             
         } else {
             wrapper.insertBefore(keyboardMarkup.createButtons(isCapsLockPressed ? rusShiftCapsLock : rusKeysShift ), input.nextSibling);
@@ -59,18 +54,19 @@ document.addEventListener('keydown', e => {
 });
 
 document.addEventListener('keyup', e => {
-    const isEng = window.localStorage.getItem('isEng') === 'true';
+    const isEng = window.localStorage.getItem('isEng') === null ? true : window.localStorage.getItem('isEng') === 'true';
 
     if(e.key === 'Shift'){
         keyboard.innerHTML = ''; 
         if (isEng) {
-            wrapper.insertBefore(keyboardMarkup.createButtons(isCapsLockPressed ? engKeysShift: engShiftCapsLock ), input.nextSibling);
+            wrapper.insertBefore(keyboardMarkup.createButtons(isCapsLockPressed ? engKeysCapsLock : engKeys), input.nextSibling);
         } else {
-            wrapper.insertBefore(keyboardMarkup.createButtons(isCapsLockPressed ? rusKeysShift: rusShiftCapsLock ), input.nextSibling);
+            wrapper.insertBefore(keyboardMarkup.createButtons(isCapsLockPressed ? rusKeysCapsLock : rusKeys), input.nextSibling);
         }
     } 
 
 });
+
 
 document.addEventListener('keydown', e => {
     const isEng = window.localStorage.getItem('isEng') === 'true';

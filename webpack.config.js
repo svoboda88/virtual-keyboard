@@ -1,9 +1,7 @@
 const path = require('path');
-const isDev = process.env.NODE_ENV === 'development';
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const {CleanWebpackPlugin} =require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-
 
 
 module.exports = {
@@ -25,15 +23,15 @@ module.exports = {
         hot: true
     },
     plugins: [ 
-        new HTMLWebpackPlugin({ // подключает в html все необходимые скрипты
-            title: 'virtual-keyboard', // создает титул для html документа
-            template: './index.html', // указывает путь к нашему html файлу чтобы перенести его содержимое
+        new HTMLWebpackPlugin({ 
+            title: 'virtual-keyboard',
+            template: './index.html',
   
         }),
-            new CleanWebpackPlugin(), // добавление плагина очищения хэша
+            new CleanWebpackPlugin(), 
             new MiniCssExtractPlugin({
-                filename: '[name].bundle.css'  // параметры такие как в Output
-            })
+                filename: '[name].bundle.css'  
+            }),        
     ],
     module: {
         rules: [

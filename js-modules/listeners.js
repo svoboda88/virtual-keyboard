@@ -1,11 +1,14 @@
+const onKeyPressHandler = (event) => {
+    let keyboardKey = document.getElementById(event.code);
+    keyboardKey.click();
+    keyboardKey.classList.add('active');
 
-const onKeyPressHandler = (event, input) => {
+};
 
-    const keyboardKey = document.getElementById(`key-${event.key}`)
-    if (event.target !== input){ 
-        keyboardKey.click()
-    }
+const onKeyUpHandler = (event) => {
+    let keyboardKey = document.getElementById(event.code);
+        keyboardKey.classList.remove('active');
 };
 
 
-export {onKeyPressHandler}
+export {onKeyPressHandler, onKeyUpHandler}

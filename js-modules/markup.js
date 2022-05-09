@@ -1,10 +1,4 @@
-import arrowTopImage from '../assets/icon-top.png';
-import arrowLeftImage from '../assets/icon-left.png';
-import arrowRightImage from '../assets/icon-right.png';
-import arrowBotImage from '../assets/icon-bottom.png';
-import { onKeyPressHandler } from './listeners';
-
-    class markup {
+    class Markup {
     constructor() {
     this.wrapper;
     this.input;
@@ -18,6 +12,7 @@ import { onKeyPressHandler } from './listeners';
         this.wrapper.classList.add('wrapper');
         document.body.prepend(this.wrapper);
         this.input = document.createElement('textarea');
+        this.input.readOnly = 'readonly';
         this.input.classList.add('input');
         this.input.id = 'input';
         this.wrapper.prepend(this.input);
@@ -33,62 +28,102 @@ import { onKeyPressHandler } from './listeners';
         this.descrParagraphTwo = document.createElement('p');
         this.descrParagraphTwo.textContent = 'Для переключения языка команда: левые ctrl + alt';
         this.description.append(this.descrParagraphTwo);
-
+        this.input.addEventListener('blur', (event) => {
+            if(this.keyboardWrapper.contains(event.relatedTarget)) {
+                this.input.focus()
+            }
+        })
 
     }
 
     createButtons(arr) {
         for (let i=0; i<arr.length; i++) {
             const key = document.createElement('button');
+            key.id = arr[i].code;
             key.classList.add('key');
-            key.textContent = arr[i];
+            key.textContent = arr[i].text;
             this.keyboardWrapper.append(key);
-            if (key.textContent === 'Backspace' || key.textContent === 'Tab' || key.textContent === 'CapsLock'
-            || key.textContent === 'Shift' || key.textContent === 'Ctrl' || key.textContent === 'Win' || key.textContent === 'Alt'
-            || key.textContent === 'Del' || key.textContent === 'Enter' || key.textContent === ' ' || key.textContent === '  '
-            || key.textContent === '   ' || key.textContent === '    '  || key.textContent === 'Shift ') {
+            if (key.id === 'Backspace' || key.id === 'Tab' || key.id === 'CapsLock' || key.id === 'ShiftRight' || key.id === 'MetaRight'
+            || key.id === 'ShiftLeft' || key.id === 'ControlLeft' || key.id === 'ControlRight' || key.id === 'MetaLeft' || key.id === 'Alt'
+            || key.id === 'Delete' || key.id === 'Enter' || key.id === 'AltLeft' || key.id === 'AltRight'
+            || key.id === 'ArrowLeft' || key.id === 'ArrowRight'  || key.id === 'ArrowUp' || key.id === 'ArrowDown' ) {
                 key.classList.add('black');
             }
         key.textContent === 'Backspace' ?  key.classList.add('backspace') : key;
-            key.textContent === 'Tab' ?  key.classList.add('tab') : key;
-            key.textContent === 'CapsLock' ?  key.classList.add('capslock') : key;
-            key.textContent === 'Shift' ? key.classList.add('shift') : key;
-            key.textContent === 'Shift ' ?  key.classList.add('shift_left') : key;
-            key.textContent === 'Ctrl' ?  key.classList.add('ctrl') : key;
-            key.textContent === 'Win' ?  key.classList.add('win') : key;
-            key.textContent === 'Alt' ?  key.classList.add('alt') : key;
-            key.textContent === 'Del' ?  key.classList.add('del') : key;
-            key.textContent === 'Enter' ? key.classList.add('enter') : key;
-            key.textContent === ' ' ?  key.classList.add('arrowtop') : key;
-            key.textContent === '  ' ?  key.classList.add('arrowleft') : key;
-            key.textContent === '    ' ?  key.classList.add('arrowright') : key;
-            key.textContent === '   ' ?  key.classList.add('arrowbottom') : key;
-            key.textContent === '     ' ?  key.classList.add('space') : key;
-            if (key.textContent === ' ') {
-                const arrowTopImg = document.createElement('img');
-                arrowTopImg.src = arrowTopImage;
-                key.append(arrowTopImg);
-            }
-            if (key.textContent === '  ') {
-                const arrowLeftImg = document.createElement('img');
-                arrowLeftImg.src = arrowLeftImage;
-                key.append(arrowLeftImg);
-            }
-            if (key.textContent === '   ') {
-                const arrowBottomImg = document.createElement('img');
-                arrowBottomImg.src = arrowBotImage;
-                key.append(arrowBottomImg);
-            }
-            if (key.textContent === '    ') {
-                const arrowRightImg = document.createElement('img');
-                arrowRightImg.src = arrowRightImage;
-                key.append(arrowRightImg);
-            }
-            key.id = `key-${key.textContent}`;
-            key.addEventListener('click', () => {
-                this.input.value = this.input.value + key.textContent
-            })
+            key.id === 'Tab' ?  key.classList.add('tab') : key;
+            key.id === 'CapsLock' ?  key.classList.add('caps-lock') : key;
+            key.id === 'ShiftRight' ? key.classList.add('shift-right') : key;
+            key.id === 'ShiftLeft' ?  key.classList.add('shift-left') : key;
+            key.id === 'ControlRight' ?  key.classList.add('control-right') : key;
+            key.id === 'ControlLeft' ?  key.classList.add('control-left') : key;
+            key.id === 'MetaLeft' ?  key.classList.add('meta-left') : key;
+            key.id === 'AltLeft' ?  key.classList.add('alt-left') : key;
+            key.id === 'AltLRight' ?  key.classList.add('alt-right') : key;
+            key.id === 'Delete' ?  key.classList.add('delete') : key;
+            key.id === 'Enter' ? key.classList.add('enter') : key;
+            key.id === 'ArrowUp' ?  key.classList.add('arrow-up') : key;
+            key.id === 'ArrowLeft' ?  key.classList.add('arrow-left') : key;
+            key.id === 'ArrowRight' ?  key.classList.add('arrow-right') : key;
+            key.id === 'ArrowDown' ?  key.classList.add('arrow-down') : key;
+            key.id === 'Space' ?  key.classList.add('space') : key;
 
+            key.addEventListener('click', () => {
+
+                if (key.textContent.length === 1 || key.textContent === '\\') {
+                 this.input.value = this.input.value + key.textContent;
+                 return;
+                }
+                if (key.id === 'Tab') {
+                    this.input.value += '    '
+                    return;
+                }
+                if (key.id === 'Space') {
+                    this.input.value += ' '
+                    return;
+                }
+                if (key.id === 'ArrowUp') {                    
+                    this.input.value += '˄';
+                    return
+                }
+                if (key.id === 'ArrowLeft') {                    
+                    this.input.value += '˂';
+                    return
+                }
+                if (key.id === 'ArrowRight') {                    
+                    this.input.value += '˃';
+                    return
+                }
+                if (key.id === 'ArrowDown') {                    
+                    this.input.value += '˅';
+                    return
+                }
+                if (key.id === 'Enter') { 
+                    this.input.value += '\n';
+                }
+
+                if (key.id === 'Backspace') {
+                    const selectionStart = this.input.selectionStart;
+                    const selectionEnd = this.input.selectionEnd;
+                    const length  = this.input.value.length;
+
+                    if(selectionStart!== undefined && selectionEnd !== undefined) {
+                        if(selectionStart !== selectionEnd) {
+
+                            this.input.value = this.input.value.slice(0, selectionStart) + this.input.value.slice(selectionEnd, length);
+                            this.input.selectionStart = selectionStart;
+                            this.input.selectionEnd = selectionStart ;
+
+                        } else {
+                            this.input.value = this.input.value.slice(0, selectionStart - 1) + this.input.value.slice(selectionStart, length);
+                            this.input.selectionStart = selectionStart - 1;
+                            this.input.selectionEnd = selectionStart - 1 ;
+                        }
+
+     
+                        return;
+                    }
+                }
+            })
         }
 
         return this.keyboardWrapper;
@@ -98,4 +133,4 @@ import { onKeyPressHandler } from './listeners';
 
 }
 
-export {markup}
+export {Markup}
